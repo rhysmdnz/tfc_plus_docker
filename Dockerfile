@@ -25,6 +25,7 @@ RUN mkdir mods && cd mods \
   && wget https://github.com/nuckable/TerraMisc/releases/download/0.14.7/TFCM-1.7.10-0.14.7.jar
 RUN echo "eula=true" > eula.txt
 ADD server.properties /opt/minecraft
+ADD ops.json /opt/minecraft
 
 ENTRYPOINT ["java", "-Xms1024M", "-Xmx8192M", "-jar", "forge-1.7.10-10.13.4.1614-1.7.10-universal.jar", "nogui"]
 EXPOSE 25565
